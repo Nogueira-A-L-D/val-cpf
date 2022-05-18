@@ -74,7 +74,7 @@ Passo 4:
 
 ## Exercício
 
-Faça um programa que recebe os 11 dígitos do CPF, um de cada vez, sem mensagens, e imprime:
+Faça um programa (chamado `cpf.c`) que recebe os 11 dígitos do CPF, um de cada vez, sem mensagens, e imprime:
 - A soma obtida no Passo 1 acima;
 - O primeiro dígito de validação;
 - A soma obtida no Passo 3 acima;
