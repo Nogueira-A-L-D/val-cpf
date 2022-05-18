@@ -2,19 +2,19 @@
 
 ## O CPF
 
-O Cadastro de Pessoas Físicas da Receita Federal do Brasil foi projetado para reduzir as chances de que números inválidos (por erros de digitação, por exemplo) possam ser usados. Ele é composto de 2 partes: 9 dígitos que compõem o número propriamente e 2 dígitos de validação, no final. (Uma curiosidade: o nono dígito é determinado pelo estado ou região do País; em SP, vale 8).
+O Cadastro de Pessoas Físicas da Receita Federal do Brasil foi projetado para reduzir as chances de que números inválidos possam ser usados (por erros de digitação, por exemplo). Ele é composto de 2 partes: 9 dígitos que constituem o número propriamente e 2 dígitos de validação, no final. (Uma curiosidade: o nono dígito é determinado pelo estado ou região do País; em SP, vale 8).
 
 ## Algoritmo de validação do CPF
 
 
-Passo 1: multiplicar o primeiro número por 10, o segundo por 9, o terceiro por 8, e assim sucessivamente até o nono número, que é multiplicado por 2. Os nove valores obtidos devem ser somados.
+Passo 1: multiplicar o primeiro dígito por 10, o segundo por 9, o terceiro por 8, e assim sucessivamente até o nono dígito, que é multiplicado por 2. Os nove valores obtidos devem ser somados.
 
 Passo 2: Tomar a soma assim obtida e calcular o resto da sua divisão por 11. Se o resto da divisão assim obtido for menor que 2, então o primeiro dígito de validação do CPF é 0.
 Se o resto da divisão por maior ou igual a 2, o primeiro dígito de validação do CPF é obtido da subtração de 11 pelo resto.
 
-Passo 3: Repetir o passo 1, mas, desta vez, com 10 números: os 9 dígitos e o primeiro dígito de validação. Os fatores começam de 11 até 2.
+Passo 3: Repetir o passo 1, mas, desta vez, com 10 valores: os 9 dígitos e o primeiro dígito de validação. Os fatores começam de 11 e vão até 2.
 
-Passo 4: Repetir o passo 2 com a soma obtida no passo 3.
+Passo 4: Repetir o mesmo procedimento do passo 2, mas dessa vez considerando a soma obtida no passo 3.
 
 ## Exemplos
 
@@ -22,6 +22,7 @@ Dois casos corretos:
 - 641.080.136/03
 - 203.912.218/41
 
+### Exemplo 641.080.136/03
 Passo 1:
 |   |   |   |   |   |   |   |   |   |
 |---|---|---|---|---|---|---|---|---|
@@ -46,6 +47,7 @@ Soma = 66 + 40 + 9 + 56 + 5 + 12 + 18 = 206
 Passo 4:
 206 % 11 = 8 => DV2 = 11 - 8 = 3
 
+### Exemplo 203.912.218/41
 Passo 1:
 |   |   |   |   |   |   |   |   |   |
 |---|---|---|---|---|---|---|---|---|
@@ -80,6 +82,8 @@ Faça um programa que recebe os 11 dígitos do CPF, um de cada vez, sem mensagen
 - O caracter `'S'` se o CPF é válido, `'N'`, caso contrário.
 
 Evite mostrar mensagens para receber dados ou mostrar resultados.
+
+Um programa equivalente de uso prático apenas imprimiria o `'S'` ou `'N'`.
 
 ## Dicas
 
