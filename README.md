@@ -91,3 +91,14 @@ Observe que o formato do resultado favorece um desenvolvimento incremental:
 - primeiro faça o programa realizar a soma do Passo 1, 
 - depois o cálculo do primeiro dígito, então a soma do Passo 3 e, 
 - por fim, o segundo dígito de validação juntamente com a decisão.
+
+Acrescente mais casos de teste; por exemplo: o seu CPF.
+
+Uma questão à parte: por que esse algoritmo tem essa forma? Como esse algoritmo
+reduz as chances de erro de digitação? Algoritmos de verificação de números formam
+uma categoria em si mesmos. Em inglês, é comum chamar esse procedimento de _check sum_
+(soma de verificação), e estão presentes em protocolos de comunicação. 
+A estratégia mais simples consiste em somar todos os números e acrescentar essa soma no final.
+Mas a soma simples tem grandes chances de não funcionar; por exemplo, podem acontecer dois
+erros simultâneos, de forma que um corrige o outro [5847 tem soma 24, mas a versão mal digitada
+6837 também tem soma 24; note que os erros foram 6 em vez de 5 (+1), e 3 em vez de 4 (-1)].
